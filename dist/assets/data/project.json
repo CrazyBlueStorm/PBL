@@ -1,0 +1,10 @@
+{
+  "id":"001",
+  "name":"Lab1",
+  "description":"这是第一次实验课项目",
+  "start_time":"2020-06-01",
+  "end_time":"2020-06-15",
+  "isAdd":"false",
+  "role":"1",
+  "score": "true"
+}

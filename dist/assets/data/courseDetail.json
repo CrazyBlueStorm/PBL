@@ -1,0 +1,10 @@
+{
+
+  "id": "002",
+  "name": "程序设计",
+  "introduction": "Java初级教程Java初级教程Java初级教程",
+  "teacher": "陈荣华",
+  "end_time":"2020-06-15",
+  "image": "assets/course/course.jpg",
+  "isAdd": "false"
+}
