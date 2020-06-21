@@ -1,8 +1,8 @@
 CREATE SCHEMA pbl_db;
 USE pbl_db;
 
-DROP TABLE IF EXISTS User;
-CREATE TABLE IF NOT EXISTS User (
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (
   userID VARCHAR(15) NOT NULL ,
   userName VARCHAR(50) NOT NULL,
   password VARCHAR(50) NOT NULL,
@@ -15,15 +15,15 @@ CREATE TABLE IF NOT EXISTS User (
   PRIMARY KEY (userID)
   )DEFAULT CHARACTER SET = utf8;
 
-DROP TABLE IF EXISTS Admin;
-CREATE TABLE IF NOT EXISTS Admin (
+DROP TABLE IF EXISTS admin;
+CREATE TABLE IF NOT EXISTS admin (
   adminID VARCHAR(15) NOT NULL ,
   password VARCHAR(50) NOT NULL,
   PRIMARY KEY (adminID)
   )DEFAULT CHARACTER SET = utf8;
 
-DROP TABLE IF EXISTS File;
-CREATE TABLE IF NOT EXISTS File (
+DROP TABLE IF EXISTS file;
+CREATE TABLE IF NOT EXISTS file (
   fileID INT(32) NOT NULL AUTO_INCREMENT,
   fileName VARCHAR(50) NOT NULL,
   filePath VARCHAR(100) NOT NULL,
@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS File (
 #ALTER TABLE User ADD CONSTRAINT FOREIGN KEY (imgID) REFERENCES File(FILEID);
 
 
-DROP TABLE IF EXISTS Course;
-CREATE TABLE IF NOT EXISTS Course (
+DROP TABLE IF EXISTS course;
+CREATE TABLE IF NOT EXISTS course (
   courseID INT(32) NOT NULL AUTO_INCREMENT,
   courseName VARCHAR(50) NOT NULL,
   introduction VARCHAR(255) NOT NULL,
@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS Course (
   FOREIGN KEY (teacherID) references User(userID)
   )DEFAULT CHARACTER SET = utf8;
 
-DROP TABLE IF EXISTS Program;
-CREATE TABLE IF NOT EXISTS Program (
+DROP TABLE IF EXISTS program;
+CREATE TABLE IF NOT EXISTS program (
   programID INT(32) NOT NULL AUTO_INCREMENT,
   programName VARCHAR(50) NOT NULL,
   introduction VARCHAR(255) NOT NULL,
@@ -69,8 +69,8 @@ CREATE TABLE IF NOT EXISTS Program (
   )DEFAULT CHARACTER SET = utf8;
 
 ALTER TABLE File ADD CONSTRAINT FOREIGN KEY (programID) REFERENCES Program(programID);
-DROP TABLE IF EXISTS Task;
-CREATE TABLE IF NOT EXISTS Task (
+DROP TABLE IF EXISTS task;
+CREATE TABLE IF NOT EXISTS task (
   taskID INT(32) NOT NULL AUTO_INCREMENT,
   taskName VARCHAR(50) NOT NULL,
   introduction VARCHAR(255) NOT NULL,
@@ -82,8 +82,8 @@ CREATE TABLE IF NOT EXISTS Task (
   FOREIGN KEY (programID) references Program(programID)
 )DEFAULT CHARACTER SET = utf8;
 
-DROP TABLE IF EXISTS Discussion;
-CREATE TABLE IF NOT EXISTS Discussion
+DROP TABLE IF EXISTS discussion;
+CREATE TABLE IF NOT EXISTS discussion
 (
   discussionID INT(32) NOT NULL AUTO_INCREMENT,
   programID INT(32) NOT NULL,
@@ -91,8 +91,8 @@ CREATE TABLE IF NOT EXISTS Discussion
   FOREIGN KEY (programID) references Program(programID)
 )DEFAULT CHARACTER SET = utf8;
 
-DROP TABLE IF EXISTS Comment;
-CREATE TABLE IF NOT EXISTS Comment (
+DROP TABLE IF EXISTS comment;
+CREATE TABLE IF NOT EXISTS comment (
   commentID INT(32) NOT NULL AUTO_INCREMENT,
   content VARCHAR(255) NOT NULL,
   replyID INT(32) DEFAULT NULL,
@@ -155,15 +155,11 @@ CREATE TABLE IF NOT EXISTS grades
   FOREIGN KEY (userID2) REFERENCES User(userID)
 )DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO User VALUES ("xiaoming","小明","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",0);
-INSERT INTO User VALUES ("kaiyudai","戴开宇","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",1);
-INSERT INTO Admin VALUES ("administrator","e10adc3949ba59abbe56e057f20f883e");
-INSERT INTO Course VALUES (null,"程序设计","programming","/test",now(),now(),0,"kaiyudai");
-INSERT INTO Program VALUES (null,"project","programming",now(),now(),0.6,0.4,1,"policy",0);
-INSERT INTO Task VALUES (null,"lab1","programming",now(),now(),1,0);
-INSERT INTO File VALUES (null,"testFile","./test",now(),"xiaoming",1);
-INSERT INTO Discussion VALUES (null,1);
-INSERT INTO Comment VALUES (null,"this is a comment",null,1,"xiaoming",now());
+INSERT INTO user VALUES ("xiaoming","小明","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",0);
+INSERT INTO user VALUES ("kaiyudai","戴开宇","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",1);
+INSERT INTO admin VALUES ("administrator","e10adc3949ba59abbe56e057f20f883e");
+INSERT INTO course VALUES (null,"程序设计","programming","/test",now(),now(),0,"kaiyudai");
+INSERT INTO discussion VALUES (null,1);
 
 
 
