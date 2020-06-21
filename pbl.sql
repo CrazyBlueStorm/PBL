@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS comment (
   publishTime DATE NOT NULL ,
   PRIMARY KEY (commentID),
   FOREIGN KEY (discussionID) REFERENCES discussion(discussionID),
-  FOREIGN KEY (userID) REFERENCES User(userID)
+  FOREIGN KEY (userID) REFERENCES user(userID)
 )DEFAULT CHARACTER SET = utf8;
 
 
