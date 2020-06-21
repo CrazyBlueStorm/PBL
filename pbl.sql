@@ -155,8 +155,8 @@ CREATE TABLE IF NOT EXISTS grades
   FOREIGN KEY (userID2) REFERENCES User(userID)
 )DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO User VALUES ("xiaoming","xiaoming","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",0);
-INSERT INTO User VALUES ("kaiyudai","kaiyudai","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",1);
+INSERT INTO User VALUES ("xiaoming","小明","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",0);
+INSERT INTO User VALUES ("kaiyudai","戴开宇","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",1);
 INSERT INTO Admin VALUES ("administrator","e10adc3949ba59abbe56e057f20f883e");
 INSERT INTO Course VALUES (null,"程序设计","programming","/test",now(),now(),0,"kaiyudai");
 INSERT INTO Program VALUES (null,"project","programming",now(),now(),0.6,0.4,1,"policy",0);
