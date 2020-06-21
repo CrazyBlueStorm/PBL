@@ -155,7 +155,11 @@ INSERT INTO user VALUES ("xiaoming","小明","e10adc3949ba59abbe56e057f20f883e",
 INSERT INTO user VALUES ("kaiyudai","戴开宇","e10adc3949ba59abbe56e057f20f883e","test","test","test","test","/test",1);
 INSERT INTO admin VALUES ("administrator","e10adc3949ba59abbe56e057f20f883e");
 INSERT INTO course VALUES (null,"程序设计","programming","/test",now(),now(),0,"kaiyudai");
+INSERT INTO program VALUES (null,"project","programming",now(),now(),0.6,0.4,1,"policy",0);
+INSERT INTO task VALUES (null,"lab1","programming",now(),now(),1,0);
+INSERT INTO file VALUES (null,"testFile","./test",now(),"xiaoming",1);
 INSERT INTO discussion VALUES (null,1);
+INSERT INTO comment VALUES (null,"this is a comment",null,1,"xiaoming",now());
 
 
 
